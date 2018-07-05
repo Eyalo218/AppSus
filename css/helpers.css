@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+}
+
+.center{
+    justify-content: center;
+}
+
+.horizontal-center{
+    align-items: center;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.clean-list{
+    list-style-type: none;
+    padding:0;
+}
+
