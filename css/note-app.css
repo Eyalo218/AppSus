@@ -1,0 +1,11 @@
+.txt-note, .list-note, .photo-note {
+    border: 1px solid gray;
+    width: 190px;
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.photo-note img {
+    max-width: 100%;
+}

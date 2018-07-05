@@ -1,4 +1,5 @@
 @import url('helpers.css');
+@import url('note-app.css');
 
 * {
     box-sizing: border-box;
