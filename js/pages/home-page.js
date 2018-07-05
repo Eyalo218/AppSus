@@ -1,8 +1,8 @@
 'use strict';
 
-import appHeader from '../cmps/site-cmps/app-header-cmp.js';
-import emailApp from '../cmps/app-cmps/email-app-cmp.js';
-import notesApp from '../cmps/app-cmps/notes-app-cmp.js';
+import appHeader from '../cmps/common-cmps/app-header-cmp.js';
+import emailApp from '../cmps/email-cmps/email-app-cmp.js';
+import notesApp from '../cmps/notes-cmps/notes-app-cmp.js';
 
 export default {
     template: `
