@@ -6,6 +6,10 @@
     margin: 10px;
 }
 
+.txt-note h3, .list-note h3, .photo-note h3 {
+    margin: 0 0 15px 0;
+}
+
 .photo-note img {
     max-width: 100%;
 }
