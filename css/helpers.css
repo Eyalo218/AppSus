@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 .center{
     justify-content: center;
 }
@@ -12,6 +16,10 @@
 
 .column{
     flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
 }
 
 .clean-list{
