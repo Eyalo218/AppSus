@@ -6,7 +6,6 @@ export default {
             <nav>
                 <router-link exact to="/">Home</router-link>
                 <router-link to="/about">About</router-link>
-
             </nav>
         </section>
     

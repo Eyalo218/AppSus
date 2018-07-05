@@ -1,11 +1,13 @@
 'use strict';
 
+import appHeader from '../cmps/app-header-cmp.js';
 import emailApp from '../cmps/app-cmps/email-app-cmp.js';
 import notesApp from '../cmps/app-cmps/notes-app-cmp.js';
 
 export default {
     template: `
         <section class="home-page">
+            <app-header></app-header>
             <h1>Home Sweet Home</h1>
             <router-link to="/misterEmail">
                 <button>Mister Email</button>
@@ -17,6 +19,7 @@ export default {
     `,
 
     components: {
+        appHeader,
         emailApp,
         notesApp
     }
