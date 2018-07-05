@@ -2,6 +2,7 @@
 
 import emailService from '../../services/email-service.js';
 import emailFilter from './email-filter-cmp.js';
+import emailList from './email-list-cmp.js';
 
 export default {
     template: `
@@ -11,7 +12,7 @@ export default {
                 <h1>Hello Mister Email</h1> 
             </div>
             <email-filter @filtered="setFilter"></email-filter>
-            <!-- <email-list :emails="emailsToShow"></email-list> -->
+            <email-list :emails="emailsToShow"></email-list>
         </section>
     `,
     data() {
@@ -45,5 +46,6 @@ export default {
     },
     components: {
         emailFilter,
+        emailList,
     }
 }
