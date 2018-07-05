@@ -4,8 +4,13 @@ function query() {
     return Promise.resolve(noteCmps);
 }
 
+function getNoteById(id) {
+    return Promise.resolve(noteCmps.find(note => note.id === id))
+}
+
 export default {
-    query
+    query,
+    getNoteById
 }
 
 var noteCmps = [
