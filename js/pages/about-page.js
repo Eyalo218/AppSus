@@ -1,6 +1,6 @@
 'use strict';
 
-import appHeader from '../cmps/app-header-cmp.js';
+import appHeader from '../cmps/site-cmps/app-header-cmp.js';
 
 export default {
     template: `
