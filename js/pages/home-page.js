@@ -2,7 +2,7 @@
 
 import appHeader from '../cmps/common-cmps/app-header-cmp.js';
 import emailApp from '../cmps/email-cmps/email-app-cmp.js';
-import noteApp from '../cmps/notes-cmps/note-app-cmp.js';
+import noteApp from '../cmps/note-cmps/note-app-cmp.js';
 
 export default {
     template: `

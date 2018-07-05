@@ -11,7 +11,7 @@ export default {
                 <h1>Hello Mister Email</h1> 
             </div>
             <email-filter @filtered="setFilter"></email-filter>
-            <email-list :emails="emailsToShow"></email-list>
+            <!-- <email-list :emails="emailsToShow"></email-list> -->
         </section>
     `,
     data() {
