@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/main.css" rel="stylesheet" />
     <title>AppSus</title>
 </head>
+
 <body>
-    <h1>AppSus</h1>
+    <div id="app">
+        <header>
+            <h1>AppSus</h1>
+            <h3>Your apps stable</h3>
+            <navbar></navbar>
+        </header>
+
+        <main>
+            <router-view></router-view>
+        </main>
+    </div>
 
     <script src="lib/vue-router.js"></script>
     <script src="lib/vue.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
