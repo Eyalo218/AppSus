@@ -2,6 +2,7 @@
 
 import noteService from '../../services/note-service.js';
 import noteList from './note-list-cmp.js';
+import eventbusService from '../../services/eventbus-service.js';
 
 export default {
     template: `
@@ -22,7 +23,17 @@ export default {
         noteService.query()
             .then((noteCmps => {
                 this.noteCmps = noteCmps;
-            }))
+            })),
+        
+        eventbusService.eventBus.$on(eventbusService.DELETE_NOTE, noteId => {
+            this.deleteNote(noteId);
+        })
+    },
+
+    methods: {
+        deleteNote(noteId) {
+            noteService.deleteNote(noteId);
+        }
     },
 
     components: {

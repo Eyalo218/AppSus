@@ -10,9 +10,15 @@ function getNoteById(id) {
     return Promise.resolve(noteCmps.find(noteCmp => noteCmp.id === id))
 }
 
+function deleteNote(noteId) {
+    var noteIdx = noteCmps.findIndex(noteCmp => noteCmp.id === noteId)
+    noteCmps.splice(noteIdx, 1);
+}
+
 export default {
     query,
-    getNoteById
+    getNoteById,
+    deleteNote
 }
 
 var noteCmps = [
