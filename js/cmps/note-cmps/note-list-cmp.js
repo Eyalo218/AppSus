@@ -9,10 +9,19 @@ export default {
 
     template: `
         <section class="note-list flex space-between flex-wrap">
-            <component :is="cmp.cmpType" :data="cmp" v-for="cmp in noteCmps" :key="cmp.id"></component>
-                <!-- <router-link :to="'/missNotes/note/'+cmp.id">Details</router-link> -->
+            <ul class="clean-list">
+                <li v-for="cmp in noteCmps">
+                    <router-link :to="'/missNotes/note/'+cmp.id">
+                        <component :is="cmp.cmpType" :data="cmp" :key="cmp.id"></component>
+                    </router-link>
+                </li>
+            </ul>
+            <router-view></router-view>
         </section>
     `,
+
+    methods: {
+    },
 
     components: {
         txtNote,
