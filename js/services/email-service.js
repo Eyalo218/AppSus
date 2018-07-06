@@ -6,9 +6,9 @@ export default {
 }
 
 var emails =[
-    {id:0,read:true,title:'First Email', sender:'OmgThey@killed.kenny',date:new Date(Date.now()), msg:'kenny is dead'},
-    {id:1,read:false,title:'Second Email', sender:'Barney@theDino.com',date:new Date(Date.now()-8000), msg:'im a purple dinosaur'},
-    {id:2, read:true,title:'Third Email', sender:'Unicorn@woohoo.com',date:new Date(Date.now()-5000), msg:'i fart rainbows'}
+    {id:0, subject:'First Email', sentAt:new Date(Date.now()), body:'kenny is dead', isRead:false},
+    {id:1, subject:'Second Email', sentAt:new Date(Date.now()-8000), body:'Barney the purple dinosaur',isRead:false},
+    {id:2, subject:'Third Email', sentAt:new Date(Date.now()-5000), body:'Does unicorn fart rainbows?',isRead:false}
 ]
 
 function getEmails(){

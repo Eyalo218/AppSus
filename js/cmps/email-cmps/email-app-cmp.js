@@ -36,12 +36,12 @@ export default {
             console.log('sorting', emails)
             if (this.filter.sort === "byName") {
                 emails.sort(function (a, b) {
-                   return a.title < b.title
+                   return a.subject < b.subject
                 })
             }
             else {
                 emails.sort(function (a, b) {
-                    return a.date < b.date
+                    return a.sentAt < b.sentAt
                 })
             }
             return emails;
