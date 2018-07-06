@@ -5,7 +5,7 @@ import emailPreview from './email-preview-cmp.js'
 export default {
     template: `
     <section>
-        <ul class="clean-list flex email-list">
+        <ul class="clean-list flex email-list column">
             <li v-for="email in emails">
                 <router-link :to="'/email/'+email.id">
                     <email-preview :email="email">

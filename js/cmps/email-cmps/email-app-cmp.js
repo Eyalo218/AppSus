@@ -32,16 +32,32 @@ export default {
         setFilter(filter) {
             return this.filter = filter;
         },
+        sortEmails(emails) {
+            console.log('sorting', emails)
+            if (this.filter.sort === "byName") {
+                emails.sort(function (a, b) {
+                   return a.title < b.title
+                })
+            }
+            else {
+                emails.sort(function (a, b) {
+                    return a.date < b.date
+                })
+            }
+            return emails;
+        }
     },
     computed: {
         emailsToShow() {
-            console.log(this.filter)
+            console.log("monkey", this.filter)
             if (this.filter === null) return this.emails;
-            return this.emails.filter(
+            var x = this.sortEmails(this.emails.filter(
                 (email) => {
                     return email;
                 }
-            )
+            ))
+            console.log(x);
+            return x;
         },
     },
     components: {

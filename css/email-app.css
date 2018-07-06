@@ -1,0 +1,19 @@
+.email-app h5{
+    margin : 2px 0;
+}
+
+.email-app h6{
+    margin: 2px 0;
+}
+.email-app h4{
+    margin:10px 0 2px 0;
+}
+
+.email-app p{
+    margin: 2px 0;
+}
+
+.email-app li{
+    background-color:lightblue;
+    border:1px solid white;
+}

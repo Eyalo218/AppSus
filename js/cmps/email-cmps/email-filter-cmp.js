@@ -7,11 +7,12 @@ export default {
             <option>Read</option>
             <option>Unread</option>
         </select>
+        <!-- maybe ill change it to drop down for ASC, need to consult with kareen -->
         <label>
-            <input type="radio" value="byName" v-model="displayEmailsBy.sort" @change="onChange()">Sort by Name
+            <input type="radio" value="byName" v-model="displayEmailsBy.sort" @click="onChange()">Sort by Name
         </label>
         <label>
-            <input type="radio" value="ByDate" v-model="displayEmailsBy.sort" @change="onChange()">Sort by date          
+            <input type="radio" value="ByDate" v-model="displayEmailsBy.sort" @click="onChange()">Sort by date          
         </label>
     </section>
     `,

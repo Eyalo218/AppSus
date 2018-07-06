@@ -1,5 +1,6 @@
 @import url('helpers.css');
 @import url('note-app.css');
+@import url('email-app.css');
 
 * {
     box-sizing: border-box;
