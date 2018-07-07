@@ -1,6 +1,7 @@
 'use strict';
 
 import emailService from '../../services/email-service.js';
+import eventBusService from '../../services/eventbus-service.js';
 import emailFilter from './email-filter-cmp.js';
 import emailList from './email-list-cmp.js';
 
@@ -34,7 +35,8 @@ export default {
             .then(data => {
                 this.emails = data;
             })
-        this.countUnreadEmails() // FML
+        this.countUnreadEmails()
+        eventBusService.eventBus.$on(eventBusService.STATUS_CHANGED,this.countUnreadEmails )
     },
     methods: {
         setFilter(filter) {
