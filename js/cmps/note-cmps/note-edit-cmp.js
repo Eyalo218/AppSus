@@ -1,4 +1,4 @@
-'use stict';
+'use strict';
 
 import noteService from '../../services/note-service.js'
 
@@ -7,20 +7,20 @@ export default {
 
     template: `
         <section class="note-edit">
-            <input v-model="noteToEdit.title" />
+            <input placeholder="Title" v-model="noteToEdit.title" />
 
             <div v-if="noteCmp.cmpType === 'txt-note'">
-                <textarea v-model="noteToEdit.content"></textarea>
+                <textarea placeholder="Your note" v-model="noteToEdit.content"></textarea>
             </div>
 
             <div v-else-if="noteCmp.cmpType === 'photo-note'">
-                <input v-model="noteToEdit.imgSrc" />
+                <input placeholder="Image source" v-model="noteToEdit.imgSrc" />
             </div>
 
             <div v-else>
                 <ul>
                     <li v-for="(item, idx) in noteToEdit.listItems">
-                        <input v-model="noteToEdit.listItems[idx].itemName" />
+                        <input placeholder="New list item" v-model="noteToEdit.listItems[idx].itemName" />
                         <button @click="deleteItem(idx)">X</button>
                     </li>
                     <!-- <li> -->

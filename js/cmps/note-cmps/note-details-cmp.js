@@ -12,7 +12,7 @@ export default {
             <button @click="$router.push('/missNotes')">X</button>
             <component :is="noteCmp.cmpType" :data="noteCmp"></component>
             <div ref="noteEditor" class="hidden">
-                <noteEdit :noteCmp="noteCmp" ></noteEdit>
+                <noteEdit :noteCmp="noteCmp"></noteEdit>
             </div>
             <button @click="openEditor">Edit</button>
             <button @click="deleteNote">Delete</button>

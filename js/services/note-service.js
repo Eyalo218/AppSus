@@ -22,6 +22,7 @@ function emptyNote(cmpType) {
     else noteContent = {listItems: [ { itemName: '', crossed: false } ]};
     
     return {
+        id: utilsService.makeId(),
         cmpType: cmpType,
         title: '',
         ...noteContent
@@ -30,7 +31,7 @@ function emptyNote(cmpType) {
 
 function addNote(note) {
     var noteIdx = noteCmps.findIndex(noteCmp => noteCmp.id === note.id)
-    if (noteIdx === -1) noteCmps.push(note);
+    if (noteIdx === -1) noteCmps.unshift(note);
     else noteCmps.splice(noteIdx, 1, note);
 }
 
