@@ -9,8 +9,8 @@ export default {
                 <button @click="openDropdown" class="dropbtn">+</button>
                     <div ref="noteTypes" class="dropdown-content">
                         <option @click="addNote('txt-note')">Text</option>
-                        <option value="photo-note">Image</option>
-                        <option value="list-note">List</option>
+                        <option @click="addNote(photo-note)">Image</option>
+                        <option @click="addNote(list-note)">List</option>
                     </div>
             </div>
         </section>
@@ -22,7 +22,7 @@ export default {
         },
 
         addNote(noteType) {
-            
+            console.log(noteService.emptyNote(noteType))
         }
     }
 

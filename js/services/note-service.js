@@ -24,7 +24,7 @@ function emptyNote(cmpType) {
     return {
         cmpType: cmpType,
         title: '',
-        noteContent
+        ...noteContent
     }
 }
 
