@@ -15,10 +15,22 @@ function deleteNote(noteId) {
     noteCmps.splice(noteIdx, 1);
 }
 
+function emptyNote() {
+    return { cmpType: 'txt-note', title: '', content: '' };
+}
+
+function addNote(note) {
+    var noteIdx = noteCmps.findIndex(noteCmp => noteCmp.id === note.id)
+    if (noteIdx === -1) noteCmps.push(note);
+    else noteCmps.splice(noteIdx, 1, note);
+}
+
 export default {
     query,
     getNoteById,
-    deleteNote
+    deleteNote,
+    emptyNote,
+    addNote
 }
 
 var noteCmps = [

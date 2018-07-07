@@ -3,16 +3,12 @@
 }
 
 .note-list {
-    background-color: lightskyblue;
-}
-
-.note-list a {
-    text-decoration: none;
-    color: inherit;
+    background-color: rgb(231, 212, 204);
 }
 
 .txt-note, .list-note, .photo-note {
-    border: 1px solid gray;
+    border: 3px solid gray;
+    background-color: rgb(223, 176, 183);
     width: 190px;
     min-height: 200px;
     padding: 10px;
@@ -28,6 +24,6 @@
 }
 
 .note-details {
-    background-color: lightgreen;
+    background-color: rgb(185, 141, 123);
     position: absolute;
 }
