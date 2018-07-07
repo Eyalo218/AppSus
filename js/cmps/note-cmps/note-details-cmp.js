@@ -5,15 +5,16 @@ import txtNote from './note-type-cmps/txt-note-cmp.js';
 import photoNote from './note-type-cmps/photo-note-cmp.js';
 import listNote from './note-type-cmps/list-note-cmp.js';
 import noteEdit from './note-edit-cmp.js';
-import eventbusService from '../../services/eventbus-service.js';
 
 export default {
     template: `
         <section class="note-details" v-if="noteCmp">
             <button @click="$router.push('/missNotes')">X</button>
             <component :is="noteCmp.cmpType" :data="noteCmp"></component>
-            <noteEdit :noteCmp="noteCmp"></noteEdit>
-            <button @click="">Edit</button>
+            <div ref="noteEditor" class="hidden">
+                <noteEdit :noteCmp="noteCmp" ></noteEdit>
+            </div>
+            <button @click="openEditor">Edit</button>
             <button @click="deleteNote">Delete</button>
         </section>
     `,
@@ -33,9 +34,13 @@ export default {
 
     methods: {
         deleteNote() {
-            eventbusService.eventBus.$emit(eventbusService.DELETE_NOTE, this.noteCmp.id);
+            noteService.deleteNote(this.noteCmp.id);
             this.noteCmp = null;
             this.$router.push('/missNotes');
+        },
+
+        openEditor() {
+            this.$refs.noteEditor.classList.remove('hidden');
         }
     },
 
