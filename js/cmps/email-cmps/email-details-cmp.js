@@ -1,4 +1,5 @@
 import emailService from '../../services/email-service.js';
+import eventBusService from '../../services/eventbus-service.js';
 
 export default {
     template: `
@@ -31,7 +32,7 @@ export default {
         },
         changeReadStatus(status){
             emailService.setReadStatus(this.$route.params.emailId,status);
-            this.$emit('statusChanged')
+            eventBusService.eventBus.$emit(eventBusService.STATUS_CHANGED);
         },
     }, 
     watch: {
