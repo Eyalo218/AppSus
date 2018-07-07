@@ -4,6 +4,7 @@ import emailService from '../../services/email-service.js';
 import emailFilter from './email-filter-cmp.js';
 import emailList from './email-list-cmp.js';
 
+
 export default {
     template: `
         <section class="email-app">
@@ -11,8 +12,12 @@ export default {
                 <button @click="$router.push('/')">Back to AppSus</button>
                 <h1>Hello Mister Email</h1> 
             </div>
-            <email-filter @filtered="setFilter"></email-filter>
-            <email-list :emails="emailsToShow"></email-list>
+                <!-- <component :is="componentId"></component> -->
+            <!-- <section></section> -->
+                <email-filter @filtered="setFilter"></email-filter>
+                <email-list :emails="emailsToShow"></email-list>
+            <!-- </section> -->
+
         </section>
     `,
     data() {
@@ -49,15 +54,12 @@ export default {
     },
     computed: {
         emailsToShow() {
-            console.log("monkey", this.filter)
             if (this.filter === null) return this.emails;
-            var x = this.sortEmails(this.emails.filter(
+            return this.sortEmails(this.emails.filter(
                 (email) => {
                     return email;
                 }
             ))
-            console.log(x);
-            return x;
         },
     },
     components: {

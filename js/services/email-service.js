@@ -2,7 +2,8 @@
 var id = 3;
 export default {
     getEmails,
-    addEmail
+    addEmail,
+    getEmailById
 }
 
 var emails =[
@@ -17,4 +18,8 @@ function getEmails(){
 
 function addEmail(email){//email is an object
     emails.push(email)
+}
+
+function getEmailById(id) {
+    return Promise.resolve(emails.find(email => email.id === +id))
 }

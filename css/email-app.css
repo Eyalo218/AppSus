@@ -17,3 +17,7 @@
     background-color:lightblue;
     border:1px solid white;
 }
+
+.email-preview .unread{
+    color:red;
+}
