@@ -14,6 +14,7 @@ export default {
             </div>
                 <!-- <component :is="componentId"></component> -->
             <!-- <section></section> -->
+                <p>unread Emails {{unreadEmails}}</p>
                 <email-filter @filtered="setFilter"></email-filter>
                 <email-list :emails="emailsToShow"></email-list>
             <!-- </section> -->
@@ -24,7 +25,8 @@ export default {
         return {
             emails: null,
             selectedEmails: null,
-            filter: null
+            filter: null,
+            unreadEmails: null
         }
     },
     created() {
@@ -32,6 +34,7 @@ export default {
             .then(data => {
                 this.emails = data;
             })
+        this.countUnreadEmails() // FML
     },
     methods: {
         setFilter(filter) {
@@ -50,17 +53,28 @@ export default {
                 })
             }
             return emails;
+        },
+        countUnreadEmails(){// need to do it with bus =D 'magic bus'
+            console.log(emailService.unreadAmount())
+            this.unreadEmails = emailService.unreadAmount();
         }
     },
     computed: {
-        emailsToShow() {
+        emailsToShow() { // need to add magic bus to it
             if (this.filter === null) return this.emails;
             return this.sortEmails(this.emails.filter(
                 (email) => {
-                    return email;
+                    if (this.filter.filter ==='All') return email;
+                    else if(this.filter.filter === 'Read') return (email.isRead===true)
+                    else if(this.filter.filter === 'Unread') return (email.isRead===false)
+                   
                 }
             ))
-        },
+        }
+    },watch: {
+        '$route' (to, from) {
+            this.countUnreadEmails()
+        }
     },
     components: {
         emailFilter,
