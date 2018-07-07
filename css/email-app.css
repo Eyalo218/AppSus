@@ -21,3 +21,11 @@
 .email-preview .unread{
     color:red;
 }
+
+.email-app .router-link-active {
+    color:white;
+}
+
+.email-details button {
+    text-transform: uppercase;
+}

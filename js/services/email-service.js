@@ -3,7 +3,10 @@ var id = 3;
 export default {
     getEmails,
     addEmail,
-    getEmailById
+    getEmailById,
+    unreadAmount,
+    deleteEmailById,
+    setReadStatus
 }
 
 var emails =[
@@ -22,4 +25,27 @@ function addEmail(email){//email is an object
 
 function getEmailById(id) {
     return Promise.resolve(emails.find(email => email.id === +id))
+}
+
+function deleteEmailById(id){
+    var index = emails.findIndex(email =>{
+        return email.id ===+id;
+    })
+    emails.splice(index,1);
+    return Promise.resolve(index!==-1);
+}
+
+function unreadAmount(){
+    var counter =0;
+    emails.forEach(
+        email=>{
+            if(!email.isRead) counter++
+        }
+    )
+    return counter;
+}
+
+function setReadStatus(id, statusBool){
+    emails.find(email => email.id === +id).isRead = statusBool;
+    window.Emails = emails;
 }
