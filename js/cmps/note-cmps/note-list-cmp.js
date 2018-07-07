@@ -20,9 +20,6 @@ export default {
         </section>
     `,
 
-    methods: {
-    },
-
     components: {
         txtNote,
         photoNote,

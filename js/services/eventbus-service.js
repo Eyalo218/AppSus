@@ -1,11 +1,9 @@
 'use strict';
 
 const eventBus = new Vue();
-const DELETE_NOTE = 'DELETE_NOTE';
-const SAVE_NOTE = 'SAVE_NOTE';
+const CROSS_ITEM = 'CROSS_ITEM';
 
 export default {
     eventBus,
-    DELETE_NOTE,
-    SAVE_NOTE
+    CROSS_ITEM
 }
