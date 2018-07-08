@@ -16,7 +16,7 @@ export default {
                 <input type="radio" value="ByDate" v-model="displayEmailsBy.sort" @click="onChange()">Sort by date          
             </label>
         </div>
-        <input type="text" class="searchByText" v-model="displayEmailsBy.searchStr" @input="onChange()" placeholder="search email here">
+        <input type="text" class="searchByText" v-model="displayEmailsBy.searchStr" @input="onChange()" placeholder="Search email here">
     </section>
     `,
     created() {
