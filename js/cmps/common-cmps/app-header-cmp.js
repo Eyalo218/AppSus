@@ -4,15 +4,13 @@ import navbar from './navbar-cmp.js';
 
 export default {
     template: `
-        <section class="appHeader flex">
-            <div>
-                <img src="../../img/logo.png">
-            </div>
-            <div>
+        <section class="app-header flex column horizontal-center">
+            <div class="logo flex column horizontal-center">
                 <h1>AppSus</h1>
+                <div class="logo-img"></div>
                 <h3>Your apps stable</h3>
-                <navbar></navbar>
             </div>
+            <navbar></navbar>
         </section>
     
     `,

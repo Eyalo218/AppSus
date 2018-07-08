@@ -7,7 +7,7 @@ export default {
     template: `
         <section class="note-add">
             <div class="dropdown">
-                <button @click="toggleDropdown" class="dropbtn">+</button>
+                <button @click.stop="toggleDropdown" class="dropbtn">+</button>
                     <div ref="noteTypes" class="dropdown-content">
                         <option @click="addNote('txt-note')">Text</option>
                         <option @click="addNote('photo-note')">Image</option>
@@ -34,6 +34,4 @@ export default {
             this.toggleDropdown();
         }
     }
-
-
 }

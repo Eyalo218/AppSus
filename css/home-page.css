@@ -1,0 +1,14 @@
+.home-page {
+    color: #3c4643;
+    background-color: #e4e4cb9c;
+    height: 100vh;
+}
+
+.home-page main {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.home-page main h1 {
+    text-align: center;
+}

@@ -6,7 +6,7 @@ export default {
     props: ['noteCmp'],
 
     template: `
-        <section class="note-edit">
+        <section class="note-edit flex column">
             <input placeholder="Title" v-model="noteToEdit.title" />
 
             <div v-if="noteCmp.cmpType === 'txt-note'">
@@ -20,13 +20,14 @@ export default {
             <div v-else>
                 <ul>
                     <li v-for="(item, idx) in noteToEdit.listItems">
-                        <input placeholder="New list item" v-model="noteToEdit.listItems[idx].itemName" />
+                        <input placeholder="New list item" v-model="noteToEdit.listItems[idx].itemName"
+                            :ref="'note' + idx" />
                         <button @click="deleteItem(idx)">X</button>
                     </li>
-                    <!-- <li> -->
-                        <!-- <input placeholder="Add" @click="changeListLength" v-model="noteToEdit.listItems[--listNewLength]" /> -->
+                    <li>
+                        <input placeholder="Add" @click="changeListLength" v-model="noteToEdit.listItems[--listNewLength]" />
                         <!-- Error in v-model, but functionality works -->
-                    <!-- </li> -->
+                    </li>
                 </ul>
             </div>
 
@@ -44,7 +45,7 @@ export default {
     
     computed: {
         addListItem() {
-            this.noteToEdit.listItems.push(this.newListItem)
+            this.noteToEdit.listItems.push(this.newListItem);
         }
     },
 
@@ -55,7 +56,12 @@ export default {
         },
 
         changeListLength() {
-            this.listNewLength = this.noteToEdit.listItems.length++
+            this.listNewLength = this.noteToEdit.listItems.push({itemName: '', crossed: false});
+            setTimeout(() => {
+                var listItem = this.$refs['note' + (this.noteToEdit.listItems.length - 1)][0];
+                listItem.focus();
+            }, 0)
+
         },
 
         deleteItem(itemIdx) {

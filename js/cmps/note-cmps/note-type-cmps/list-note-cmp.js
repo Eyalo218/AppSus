@@ -8,7 +8,7 @@ export default {
     template: `
         <section class="list-note">
             <h3>{{data.title}}</h3>
-            <ul>
+            <ul class="clean-list">
                 <li v-for="(item, idx) in data.listItems" @click.prevent="crossItem([data.id, idx])" :ref="'item-' + idx">
                     {{item.itemName}}
                 </li>
