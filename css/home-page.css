@@ -22,18 +22,16 @@
     margin: 0 0 20px 0;
 }
 
-.app-btns {
-    /* height: 100%; */
-}
-
 .app-btns div {
     cursor: pointer;
     color: #5d867c;
     border-radius: 10px;
     border: 2px #3c4643 solid;
     background-color: #7dab9fb8;
-    width: 50%;
-    /* height: 260px; */
+    width: 40vw;
+    height: 40vw;
+    min-width: 110px;
+    min-height: 110px;
     transition: all .3s;
 }
 

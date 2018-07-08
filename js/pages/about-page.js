@@ -10,7 +10,7 @@ export default {
                 <h1>About Us</h1>
                 <div class="team flex column">
                     <div class="team-member flex column horizontal-center">
-                        <img src="./img/1.jpg" alt="Eyal Ohayon" />
+                        <img src="./img/Eyal.jpg" alt="Eyal Ohayon" />
                         <div>
                             <h2>Eyal Ohayon</h2>
                             <p>
