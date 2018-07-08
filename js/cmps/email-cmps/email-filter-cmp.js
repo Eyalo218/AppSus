@@ -16,14 +16,14 @@ export default {
                 <input type="radio" value="ByDate" v-model="displayEmailsBy.sort" @click="onChange()">Sort by date          
             </label>
         </div>
-        <input type="text" class="searchByText">
+        <input type="text" class="searchByText" v-model="displayEmailsBy.searchStr" @input="onChange()" placeholder="search email here">
     </section>
     `,
     created() {
     },
     data (){
         return {
-            displayEmailsBy: {filter: 'All' , sort:'ByDate'}
+            displayEmailsBy: {filter: 'All' , sort:'ByDate' ,searchStr:''}
         }
     },
     methods: {
