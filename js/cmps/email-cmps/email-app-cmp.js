@@ -43,7 +43,7 @@ export default {
             console.log('sorting', emails)
             if (this.filter.sort === "byName") {
                 emails.sort(function (a, b) {
-                   return a.subject < b.subject
+                   return a.subject > b.subject
                 })
             }
             else {
@@ -61,6 +61,12 @@ export default {
     computed: {
         emailsToShow() {
             if (this.filter === null) return this.emails;
+            else if(this.filter.searchStr){
+                var searchStr = this.filter.searchStr.toUpperCase();
+                return this.emails.filter(
+                    email=>{ return (email.subject.toUpperCase().indexOf(searchStr)!==-1 || email.body.toUpperCase().indexOf(searchStr)!==-1)}
+                )
+            }
             return this.sortEmails(this.emails.filter(
                 (email) => {
                     if (this.filter.filter ==='All') return email;
