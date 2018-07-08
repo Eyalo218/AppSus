@@ -10,12 +10,18 @@
 }
 
 .email-app p{
+    padding: 10px;
     margin: 2px 0;
+}
+
+.email-app label, .email-app input[type="radio"], .email-app select {
+    cursor: pointer;
 }
 
 .email-app li{
     background-color:#EDF5E1;
-    border:1px solid #379683;
+    border:1px solid rgb(9,69,44);
+    cursor: pointer;
 }
 .envelope-img{
     width:50px;
@@ -23,6 +29,10 @@
     background-size :3em;
     background-position: center;
     background-image: url('../img/open1.png')
+}
+
+.email-preview {
+    padding: 5px;
 }
 
 .email-preview .unread .envelope-img{
@@ -35,7 +45,7 @@
 }
 
 .email-app .router-link-active {
-    color:white;
+    color:rgb(38, 136, 105);
 }
 
 .email-details{
@@ -45,6 +55,7 @@
 
 .email-details button {
     text-transform: uppercase;
+    transition: all .3s;
 }
 
 
@@ -53,32 +64,46 @@
     margin: 0 5px;
 }
 
+.email-list a {
+    color: inherit;
+}
+
+.email-filter {
+    padding: 10px;
+}
+
 .email-filter .searchByText{
     height: 22px;
 }
 
 .sub-routes{
+    border:1px solid rgb(9,69,44);    
+    background-color: rgba(237, 245, 225, 0.774);
     justify-content: center;
     width:0%;
+    padding: 10px;
 }
 
 .email-app h1{
     text-align: center;
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
 }
 
 .email-app{
     font-family:'Nunito';
-    background-color:#5CDB95;
+    background-color: rgba(19, 115, 85, 0.51);
     height: 100%;
     min-height: 100vh;
     position: relative;
     padding-bottom: 50px;
-    color:#05386B
+    color: rgb(9,69,44);
 }
 
 .email-app .header{
     font-family:'Nunito';
-    background-color:#379683;
+    background-color: rgb(19,115,85);
     height:90px;
 }
 .email-app button{
@@ -86,19 +111,29 @@
     cursor: pointer;
 }
 .email-app .back {
+    color: white;
     border: none;
     background-color: transparent;
     transition: all .3s;
 }
-
 
 .new-email-button{
     position: absolute;
     bottom: 15px;
     width: 100%;
 }
+
+.new-email-button button{
+    /* border: none; */
+    transition: all .3s;
+}
+
+.new-email-button button:hover, .email-details button:hover{
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
 .email-app .back:hover {
-    color: silver;
+    color: rgb(34, 189, 140);
 }
 
 .new-email{

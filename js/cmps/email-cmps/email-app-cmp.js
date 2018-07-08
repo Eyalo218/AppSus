@@ -11,10 +11,10 @@ export default {
         <section class="email-app">
             <div class="header">
                 <button @click="$router.push('/')" class="back">Back to AppSus</button>
-                <h1>Hello Mister Email</h1> 
+                <h1>Mister Email</h1> 
             </div>  
                 <email-filter @filtered="setFilter"></email-filter>
-                <p>You Have {{unreadEmails}} unread emails</p>
+                <p>You have {{unreadEmails}} unread emails</p>
                 <email-list :emails="emailsToShow"></email-list>
         </section>
     `,
