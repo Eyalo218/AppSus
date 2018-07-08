@@ -14,8 +14,8 @@
 }
 
 .email-app li{
-    background-color:lightblue;
-    border:1px solid white;
+    background-color:#EDF5E1;
+    border:1px solid #379683;
 }
 .envelope-img{
     width:50px;
@@ -68,16 +68,17 @@
 
 .email-app{
     font-family:'Nunito';
-    background-color:rgb(120, 172, 137);
+    background-color:#5CDB95;
     height: 100%;
     min-height: 100vh;
     position: relative;
     padding-bottom: 50px;
+    color:#05386B
 }
 
 .email-app .header{
     font-family:'Nunito';
-    background-color:rgb(109, 121, 89);
+    background-color:#379683;
     height:90px;
 }
 .email-app button{
