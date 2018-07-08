@@ -10,16 +10,12 @@ export default {
     template: `
         <section class="email-app">
             <div class="header">
-                <button @click="$router.push('/')">Back to AppSus</button>
+                <button @click="$router.push('/')" class="back">Back to AppSus</button>
                 <h1>Hello Mister Email</h1> 
-            </div>
-                <!-- <component :is="componentId"></component> -->
-            <!-- <section></section> -->
-                <p>unread Emails {{unreadEmails}}</p>
+            </div>  
                 <email-filter @filtered="setFilter"></email-filter>
+                <p>You Have {{unreadEmails}} unread emails</p>
                 <email-list :emails="emailsToShow"></email-list>
-            <!-- </section> -->
-
         </section>
     `,
     data() {
@@ -43,6 +39,7 @@ export default {
             return this.filter = filter;
         },
         sortEmails(emails) {
+            console.log( 'OMFG', emails)
             console.log('sorting', emails)
             if (this.filter.sort === "byName") {
                 emails.sort(function (a, b) {
@@ -56,20 +53,19 @@ export default {
             }
             return emails;
         },
-        countUnreadEmails(){// need to do it with bus =D 'magic bus'
+        countUnreadEmails(){
             console.log(emailService.unreadAmount())
             this.unreadEmails = emailService.unreadAmount();
         }
     },
     computed: {
-        emailsToShow() { // need to add magic bus to it
+        emailsToShow() {
             if (this.filter === null) return this.emails;
             return this.sortEmails(this.emails.filter(
                 (email) => {
                     if (this.filter.filter ==='All') return email;
                     else if(this.filter.filter === 'Read') return (email.isRead===true)
                     else if(this.filter.filter === 'Unread') return (email.isRead===false)
-                   
                 }
             ))
         }

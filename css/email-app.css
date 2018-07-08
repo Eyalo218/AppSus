@@ -17,15 +17,124 @@
     background-color:lightblue;
     border:1px solid white;
 }
+.envelope-img{
+    width:50px;
+    height: auto;
+    background-size :3em;
+    background-position: center;
+    background-image: url('../img/open1.png')
+}
 
-.email-preview .unread{
-    color:red;
+.email-preview .unread .envelope-img{
+    background-size :6em;
+    background-image: url('../img/closed1.png')
+}
+
+.email-preview h4{
+    float:left;
 }
 
 .email-app .router-link-active {
     color:white;
 }
 
+.email-details{
+    justify-content: space-between;
+    align-items: center;
+}
+
 .email-details button {
     text-transform: uppercase;
+}
+
+
+.email-list{
+    width:100%;
+    margin: 0 5px;
+}
+
+.email-filter .searchByText{
+    height: 22px;
+}
+
+.sub-routes{
+    justify-content: center;
+    width:0%;
+}
+
+.email-app h1{
+    text-align: center;
+}
+
+.email-app{
+    font-family:'Nunito';
+    background-color:rgb(120, 172, 137);
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.email-app .header{
+    font-family:'Nunito';
+    background-color:rgb(109, 121, 89);
+    height:90px;
+}
+.email-app button{
+    font-family: 'Nunito';
+    cursor: pointer;
+}
+.email-app .back {
+    border: none;
+    background-color: transparent;
+    transition: all .3s;
+}
+
+
+.new-email-button{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+.email-app .back:hover {
+    color: silver;
+}
+
+.new-email{
+    width:70%;
+    margin: 0 auto;
+}
+
+
+@media (min-width:550px){
+    .email-list{
+        width:40%
+    }
+    .email-list.hidden{
+        display:inherit;
+    }
+    .sub-routes{
+        width:60%;
+        display: flex;
+        justify-content: center;
+        margin:0 5px;
+        display: inherit;
+    }
+    .sub-routes.hidden{
+        display: flex;
+        justify-content: center;
+        margin:0 5px;
+        display: inherit;
+        width: 60%;
+    }
+}
+
+
+
+.email-list-cmp img{
+    height:25px;
+}
+
+.email-details img {
+    height:20px;
 }
