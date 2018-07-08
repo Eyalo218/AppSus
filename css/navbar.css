@@ -1,0 +1,9 @@
+.navbar a {
+    font-size: 1.2em;
+    color: #5d867c;
+}
+
+
+a.router-link-active {
+    color: #96efd9;
+}

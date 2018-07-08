@@ -8,15 +8,19 @@ import noteEdit from './note-edit-cmp.js';
 
 export default {
     template: `
-        <section class="note-details" v-if="noteCmp">
-            <button @click="$router.push('/missNotes')">X</button>
+    <div class="note-details-wrapper flex center horizontal-center">
+        <section class="note-details flex column horizontal-center" v-if="noteCmp">
+            <button class="close-note" @click="$router.push('/missNotes')">X</button>
             <component :is="noteCmp.cmpType" :data="noteCmp"></component>
             <div ref="noteEditor" class="hidden">
                 <noteEdit :noteCmp="noteCmp"></noteEdit>
             </div>
-            <button @click="openEditor">Edit</button>
-            <button @click="deleteNote">Delete</button>
+            <div class="note-btns flex space-between">
+                <button @click="openEditor">Edit</button>
+                <button @click="deleteNote">Delete</button>
+            </div>
         </section>
+    </div>
     `,
 
     data() {

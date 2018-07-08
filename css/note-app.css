@@ -1,26 +1,57 @@
 .note-app {
-    background-color: lightgoldenrodyellow;
+    font-family: 'IndieFlower', cursive;
+    background-color: rgb(223, 176, 183);
+}
+
+.note-app button {
+    font-family: 'IndieFlower', cursive;
+    cursor: pointer;
+}
+
+.note-app .back {
+    border: none;
+    background-color: transparent;
+    transition: all .3s;
+}
+
+.note-app .back:hover, .close-note:hover, .note-btns button:hover, .note-edit button:hover {
+    color: lightgoldenrodyellow;
 }
 
 .note-list {
     background-color: rgb(231, 212, 204);
 }
 
+.note-app h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 10px;
+}
+
 .note-list a {
     color: inherit;
 }
 
+.note-list h3, .note-list p {
+    word-wrap: break-word;
+}
+
 .txt-note, .list-note, .photo-note {
-    border: 3px solid gray;
-    background-color: rgb(223, 176, 183);
+    border: 2px solid gray;
+    background-color: lightgoldenrodyellow;
     width: 190px;
     min-height: 200px;
     padding: 10px;
-    margin: 10px;
+    margin: 5px 10px 10px 10px;
 }
 
 .list-note li {
     cursor: pointer;
+    width: fit-content;
+}
+
+.list-note li::before {
+    content: '*'
 }
 
 .txt-note h3, .list-note h3, .photo-note h3 {
@@ -31,30 +62,70 @@
     max-width: 100%;
 }
 
+.note-details-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.349);
+    top: 0;
+    left: 0;
+}
+
 .note-details {
     background-color: rgb(185, 141, 123);
     position: absolute;
+}
+
+.close-note {
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+    align-self: flex-end;
+    transition: all .3s;
+}
+
+.note-btns button {
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+    transition: all .3s;
 }
 
 .crossed-item {
     text-decoration: line-through;
 }
 
+.note-edit {
+    margin: 0 10px 10px;
+}
+
+.note-edit button {
+    border: none;
+    background-color: transparent;
+    transition: all .3s;
+}
+
 /**** DROPDOWN ****/
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
     cursor: pointer;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(151, 151, 66);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: all .3s;
+    position: absolute;
+    left: 10px;
+    bottom: -24px;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    background-color: rgb(240, 240, 124);
 }
 
 /* The container <div> - needed to position the dropdown content */

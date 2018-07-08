@@ -1,9 +1,21 @@
 @import url('helpers.css');
+@import url('app-header.css');
+@import url('home-page.css');
+@import url('navbar.css');
 @import url('note-app.css');
 @import url('email-app.css');
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../fonts/josefin-sans/JosefinSans-Regular.ttf');
 }
 
 @font-face {
@@ -16,18 +28,12 @@
     src: url('../fonts/IndieFlower.ttf');
 }
 
-/* font-family: 'IndieFlower', cursive; */
 /* font-family: 'Nunito', sans-serif; */
+
+main {
+    font-family: 'Josefin Sans', sans-serif;
+}
 
 a {
     text-decoration: none;
 }
-
-.router-link-active {
-    color: lightcoral;
-}
-
-.appHeader img {
-    height: 150px;
-}
-

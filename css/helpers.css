@@ -6,6 +6,10 @@
     justify-content: space-between;
 }
 
+.space-around {
+    justify-content: space-around;
+}
+
 .center{
     justify-content: center;
 }
@@ -29,12 +33,4 @@
 
 .hidden { 
     display: none;
-}
-
-.space-between{
-    justify-content: space-between;
-}
-
-.flex-wrap{
-    flex-wrap: wrap;
 }

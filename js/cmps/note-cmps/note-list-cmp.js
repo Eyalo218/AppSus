@@ -8,8 +8,8 @@ export default {
     props: ['noteCmps'],
 
     template: `
-        <section class="note-list flex space-between flex-wrap">
-            <ul class="clean-list">
+        <section class="note-list flex center">
+            <ul class="clean-list flex flex-wrap center">
                 <li v-for="cmp in noteCmps">
                     <router-link :to="'/missNotes/note/'+cmp.id">
                         <component :is="cmp.cmpType" :data="cmp" :key="cmp.id"></component>
@@ -24,7 +24,5 @@ export default {
         txtNote,
         photoNote,
         listNote
-    },
-    created(){
     }
 }

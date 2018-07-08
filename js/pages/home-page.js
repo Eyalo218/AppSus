@@ -8,13 +8,17 @@ export default {
     template: `
         <section class="home-page">
             <app-header></app-header>
-            <h1>Home Sweet Home</h1>
-            <router-link to="/misterEmail">
-                <button>Mister Email</button>
-            </router-link>
-            <router-link to="/missNotes">
-                <button>Miss Notes</button>
-            </router-link>
+            <main>
+                <h1>Choose App</h1>
+                <div class="app-btns">
+                    <router-link to="/misterEmail">
+                        <button>Mister Email</button>
+                    </router-link>
+                    <router-link to="/missNotes">
+                        <button>Miss Notes</button>
+                    </router-link>
+                </div>
+            </main>
         </section>
     `,
 
