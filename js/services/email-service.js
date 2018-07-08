@@ -20,7 +20,10 @@ function getEmails(){
 }
 
 function addEmail(email){//email is an object
+    email.id = id;
     emails.push(email)
+    id++
+    return Promise.resolve(true);
 }
 
 function getEmailById(id) {

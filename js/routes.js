@@ -6,13 +6,16 @@ import emailApp from './cmps/email-cmps/email-app-cmp.js';
 import noteApp from './cmps/note-cmps/note-app-cmp.js';
 import noteDetails from './cmps/note-cmps/note-details-cmp.js';
 import emailDetails from './cmps/email-cmps/email-details-cmp.js'
+import newEmail from './cmps/email-cmps/new-email-cmp.js'
 
 const routes = [
     { path: '/', component: homePage },
     { path: '/about', component: aboutPage },
     {
         path: '/misterEmail', component: emailApp,
-        children: [{ path: 'email/:emailId', component: emailDetails }]
+        children: [{ path: 'email/:emailId', component: emailDetails },
+        { path: 'newEmail', component: newEmail }
+    ]
     },
     {
         path: '/missNotes', component: noteApp,
