@@ -1,3 +1,10 @@
+@media (min-width: 580px) {
+    .app-btns a div {
+        width: 260px;
+        height: 260px;
+    }
+}
+
 .home-page {
     color: #3c4643;
     background-color: #e4e4cb9c;
@@ -5,10 +12,41 @@
 }
 
 .home-page main {
-    width: fit-content;
-    margin: 0 auto;
+    width: 100%;
+    padding: 15px;
 }
 
 .home-page main h1 {
+    font-size: 2em;
     text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.app-btns {
+    /* height: 100%; */
+}
+
+.app-btns div {
+    cursor: pointer;
+    color: #5d867c;
+    border-radius: 10px;
+    border: 2px #3c4643 solid;
+    background-color: #7dab9fb8;
+    width: 50%;
+    /* height: 260px; */
+    transition: all .3s;
+}
+
+.app-btns div:hover {
+    background-color: #a8dfd0b8;
+    border-radius: 20%;
+}
+
+.app-btns h4 {
+    font-weight: normal;
+    margin: 20px 0 0 0;
+}
+
+.app-btns div img {
+    width: 50%;
 }

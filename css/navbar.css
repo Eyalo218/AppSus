@@ -1,9 +1,14 @@
+.navbar {
+    margin-top: 10px;
+}
+
 .navbar a {
     font-size: 1.2em;
     color: #5d867c;
+    padding: 10px;
+    transition: all .3s;
 }
 
-
-a.router-link-active {
-    color: #96efd9;
+a.router-link-active, .navbar a:hover {
+    color: #abfde9;
 }

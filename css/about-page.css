@@ -1,0 +1,52 @@
+@media (min-width: 330px) {
+    .team-member {
+        display: block;
+    }
+    .team-member img {
+        float: right;
+    }
+}
+
+@media (min-width: 700px) {
+    section.about-page {
+        height: 100vh;
+    }
+    .about-page .team {
+        flex-direction: row;
+    }
+    .team-member {
+        width: 50%;
+        margin: 0 20px;
+    }
+}
+
+.about-page {
+    color: #3c4643;
+    background-color: #e4e4cb9c;
+    height: 100%;
+}
+
+.about-page main {
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.about-page main h1 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.team-member {
+    margin-bottom: 15px;
+}
+
+.team-member img {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 45%;
+    min-width: 140px;
+    max-width: 200px;
+    /* float: right; */
+}

@@ -12,7 +12,9 @@ export default {
             <ul class="clean-list flex flex-wrap center">
                 <li v-for="cmp in noteCmps">
                     <router-link :to="'/missNotes/note/'+cmp.id">
-                        <component :is="cmp.cmpType" :data="cmp" :key="cmp.id"></component>
+                        <component :is="cmp.cmpType" :data="cmp" :style="{backgroundColor: cmp.bgColor}">
+            
+                        </component>
                     </router-link>
                 </li>
             </ul>

@@ -1,6 +1,7 @@
 @import url('helpers.css');
 @import url('app-header.css');
 @import url('home-page.css');
+@import url('about-page.css');
 @import url('navbar.css');
 @import url('note-app.css');
 @import url('email-app.css');
@@ -27,8 +28,6 @@ body {
     font-family: 'IndieFlower';
     src: url('../fonts/IndieFlower.ttf');
 }
-
-/* font-family: 'Nunito', sans-serif; */
 
 main {
     font-family: 'Josefin Sans', sans-serif;

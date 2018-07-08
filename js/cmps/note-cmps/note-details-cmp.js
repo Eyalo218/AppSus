@@ -11,12 +11,13 @@ export default {
     <div class="note-details-wrapper flex center horizontal-center">
         <section class="note-details flex column horizontal-center" v-if="noteCmp">
             <button class="close-note" @click="$router.push('/missNotes')">X</button>
-            <component :is="noteCmp.cmpType" :data="noteCmp"></component>
+            <component :is="noteCmp.cmpType" :data="noteCmp" :ref="noteCmp.id" :style="{backgroundColor: noteCmp.bgColor}"></component>
             <div ref="noteEditor" class="hidden">
                 <noteEdit :noteCmp="noteCmp"></noteEdit>
             </div>
             <div class="note-btns flex space-between">
                 <button @click="openEditor">Edit</button>
+                <input type="color" @change="changeNoteColor()" ref="colorPicker" />
                 <button @click="deleteNote">Delete</button>
             </div>
         </section>
@@ -45,6 +46,11 @@ export default {
 
         openEditor() {
             this.$refs.noteEditor.classList.remove('hidden');
+        },
+
+        changeNoteColor() {
+            let chosenNoteColor = this.$refs.colorPicker.value;
+            noteService.changeNoteColor(this.noteCmp.id, chosenNoteColor);
         }
     },
 

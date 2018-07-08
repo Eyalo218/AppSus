@@ -21,7 +21,7 @@ export default {
                 <ul>
                     <li v-for="(item, idx) in noteToEdit.listItems">
                         <input placeholder="New list item" v-model="noteToEdit.listItems[idx].itemName"
-                            :ref="'note' + idx" />
+                            :ref="'item' + idx" />
                         <button @click="deleteItem(idx)">X</button>
                     </li>
                     <li>
@@ -58,7 +58,7 @@ export default {
         changeListLength() {
             this.listNewLength = this.noteToEdit.listItems.push({itemName: '', crossed: false});
             setTimeout(() => {
-                var listItem = this.$refs['note' + (this.noteToEdit.listItems.length - 1)][0];
+                var listItem = this.$refs['item' + (this.noteToEdit.listItems.length - 1)][0];
                 listItem.focus();
             }, 0)
 
