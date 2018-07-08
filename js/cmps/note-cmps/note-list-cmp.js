@@ -24,5 +24,7 @@ export default {
         txtNote,
         photoNote,
         listNote
+    },
+    created(){
     }
 }

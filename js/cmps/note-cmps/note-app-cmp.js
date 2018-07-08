@@ -27,17 +27,38 @@ export default {
                 this.noteCmps = noteCmps;
             })),
 
-        eventbusService.eventBus.$on(eventbusService.CROSS_ITEM, ([noteId, listItemIdx]) => {
-            noteService.crossListItem([noteId, listItemIdx])
-        }),
+            eventbusService.eventBus.$on(eventbusService.CROSS_ITEM, ([noteId, listItemIdx]) => {
+                noteService.crossListItem([noteId, listItemIdx])
+            }),
+            eventbusService.eventBus.$on(eventbusService.CROSS_ITEM2,this.trying() )
+            eventbusService.eventBus.$on(eventbusService.NEW_NOTE, newNote => {
+                noteService.addNote(newNote);
+            })
+    },
+    methods:{
+        trying(){
+            this.noteCmps = null;
+            noteService.query()
+            .then((noteCmps => {
+                this.noteCmps = noteCmps;
+            }))
 
-        eventbusService.eventBus.$on(eventbusService.NEW_NOTE, newNote => {
-            noteService.addNote(newNote);
-        })
+        }
     },
 
     components: {
         noteList,
         noteAdd
+    },
+    //testing by eyal - working !! trying another way to make it work right away
+    watch: {
+        '$route'(to, from) {
+            this.noteCmps = null;
+            noteService.query()
+            .then((noteCmps => {
+                this.noteCmps = noteCmps;
+            }))
+        }
     }
+
 }
